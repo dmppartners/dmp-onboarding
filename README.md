@@ -117,3 +117,43 @@ Il codice supporta anche Vercel Blob (imposta `BLOB_READ_WRITE_TOKEN` invece di
 va comunque avviato da un umano (dal terminale o dalla dashboard): nessun connettore
 disponibile qui puo' creare un deployment Vercel per conto tuo. Su Railway invece esiste
 un connettore con un vero comando di deploy, per questo e' la scelta di partenza.
+
+---
+
+## 9. Sito vetrina Arch. Vittoria Ribighini (`/vittoria`)
+
+Nello stesso progetto vive la ricostruzione del sito di Arch. Vittoria Ribighini
+(progettazione e arredamento, Ancona): sette pagine piu' un chatbot d'atelier.
+Vive sotto `/vittoria` e non tocca nulla dell'onboarding.
+
+```
+/vittoria                 home
+/vittoria/progetto        arredamento casa
+/vittoria/realizzazioni   portfolio
+/vittoria/contract        hotel, residence, ristoranti, uffici
+/vittoria/architetti      supporto ai progettisti
+/vittoria/brand           marchi in selezione
+/vittoria/contatti        recapiti + modulo
+```
+
+**Dove si mettono le mani**
+
+| Cosa | File |
+|---|---|
+| Testi, recapiti, marchi, progetti | `lib/vittoria/content.js` |
+| Colori, font, logo | `lib/vittoria/brand.js` + `app/vittoria/vittoria.css` (token in cima) |
+| Risposte del chatbot | `lib/vittoria/knowledge.js` |
+| Fotografie | `components/vittoria/Plate.jsx` — passare `src` al posto della superficie generata |
+
+**Chatbot.** Senza `ANTHROPIC_API_KEY` risponde il motore deterministico:
+funziona subito, a costo zero, e non inventa nulla. Con la chiave impostata
+risponde Claude (`claude-opus-5`, cambiabile con `VR_CHAT_MODEL`) usando la
+stessa scheda come system prompt; se la chiamata fallisce o un IP supera 20
+messaggi in 10 minuti, si torna al motore locale senza che il visitatore se ne
+accorga.
+
+**Da sostituire prima di andare online**: le schede progetto in
+`works` (`lib/vittoria/content.js`) sono materiale d'impaginazione, e la
+palette e' una ricostruzione — i valori esatti del marchio vanno messi nei
+token in cima a `app/vittoria/vittoria.css`. Le pagine sono in `noindex`
+finche' resta un'anteprima.

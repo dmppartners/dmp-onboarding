@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#191512"/>
+  <path d="M7 26V13.5a9 9 0 0 1 18 0V26" fill="none" stroke="#C9A46A" stroke-width="1.6"/>
+  <path d="M7 26h18" stroke="#C9A46A" stroke-width="1.6"/>
+  <text x="16" y="22" text-anchor="middle" fill="#F7F4EF" font-family="Georgia, serif" font-size="10">VR</text>
+</svg>
