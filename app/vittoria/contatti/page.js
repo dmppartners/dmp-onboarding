@@ -78,7 +78,7 @@ export default function ContattiPage() {
             <ContactForm />
           </Reveal>
           <Reveal delay={120}>
-            <Plate variant="travertino" arch caption="Via Pizzecolli 2 · Ancona" />
+            <Plate illo="atelier" arch caption="Via Pizzecolli 2 · Ancona" />
           </Reveal>
         </div>
       </section>

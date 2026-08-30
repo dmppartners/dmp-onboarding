@@ -38,7 +38,7 @@ export default function VittoriaHome() {
           </div>
 
           <Reveal className="vr-hero__plate" delay={140}>
-            <Plate variant={home.hero.plate.variant} arch caption={home.hero.plate.caption} />
+            <Plate illo={home.hero.plate.illo} arch caption={home.hero.plate.caption} />
             <div className="vr-hero__badge">
               <strong>Dal {business.since}</strong>
               <span>nel centro di {business.city}</span>
@@ -148,7 +148,7 @@ export default function VittoriaHome() {
           <Reveal className="vr-services" delay={80}>
             {home.services.items.map((item) => (
               <Link className="vr-service" href={item.href} key={item.href}>
-                <Plate variant={item.variant} frame={false} />
+                <Plate illo={item.illo} frame={false} />
                 <div className="vr-service__body">
                   <h3 className="vr-service__title">{item.title}</h3>
                   <p className="vr-service__text">{item.text}</p>
@@ -171,7 +171,7 @@ export default function VittoriaHome() {
             {teaser.map((work) => (
               <article className="vr-work vr-work--std" key={work.title}>
                 <div className="vr-work__frame">
-                  <Plate variant={work.variant} frame={false} />
+                  <Plate illo={work.illo} frame={false} />
                 </div>
                 <div className="vr-work__meta">
                   <span>{work.place}</span>

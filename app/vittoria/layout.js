@@ -2,6 +2,7 @@ import "./vittoria.css";
 import Header from "../../components/vittoria/Header";
 import Footer from "../../components/vittoria/Footer";
 import ChatWidget from "../../components/vittoria/ChatWidget";
+import { IllustrationDefs } from "../../components/vittoria/Illustrations";
 import { business } from "../../lib/vittoria/content";
 
 export const metadata = {
@@ -33,6 +34,7 @@ export default function VittoriaLayout({ children }) {
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link rel="stylesheet" href={FONTS} />
+      <IllustrationDefs />
       <Header />
       <main>{children}</main>
       <Footer />

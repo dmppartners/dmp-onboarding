@@ -381,6 +381,32 @@
   padding: 0.75rem 1.1rem;
 }
 
+/* =========================================================================
+   Illustrazioni — scene a tratto al posto della fotografia che non abbiamo.
+   Un fondo piatto (niente texture materica) piu' un simbolo dello sprite
+   di Illustrations.jsx, centrato. Stile comune: tratto ink, due accenti
+   in ottone per oggetto (vaso, paralume, libro) cosi' l'occhio si posa
+   sempre nello stesso punto di ogni composizione.
+   ========================================================================= */
+.vr-plate--scene {
+  background: var(--paper-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8%;
+}
+/* Colore e tratto di base sono attributi propri di ogni <symbol> in
+   Illustrations.jsx (il contenuto clonato da <use> non e' raggiungibile da
+   selettori CSS esterni, solo l'ereditarieta' lo attraversa) — qui restano
+   solo dimensione e "currentColor", che invece eredita in modo affidabile. */
+.vr-illo {
+  width: 100%;
+  height: 100%;
+  max-width: 22rem;
+  color: var(--ink);
+  overflow: visible;
+}
+
 .vr-hero__plate { position: relative; }
 .vr-hero__plate .vr-plate { aspect-ratio: 4 / 5; }
 .vr-hero__badge {

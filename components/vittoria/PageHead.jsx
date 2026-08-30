@@ -2,10 +2,10 @@ import Plate from "./Plate";
 import Reveal from "./Reveal";
 
 /** Testata comune alle pagine interne. */
-export default function PageHead({ eyebrow, title, titleAccent, lead, plate }) {
+export default function PageHead({ eyebrow, title, titleAccent, lead, plateIllo, plateCaption }) {
   return (
     <section className="vr-pagehead">
-      <div className={`vr-shell${plate ? " vr-pagehead__grid" : ""}`}>
+      <div className={`vr-shell${plateIllo ? " vr-pagehead__grid" : ""}`}>
         <Reveal>
           <p className="vr-eyebrow">{eyebrow}</p>
           <h1 className="vr-display vr-h1">
@@ -14,9 +14,9 @@ export default function PageHead({ eyebrow, title, titleAccent, lead, plate }) {
           </h1>
           <p className="vr-lead">{lead}</p>
         </Reveal>
-        {plate ? (
+        {plateIllo ? (
           <Reveal delay={140}>
-            <Plate variant={plate} arch />
+            <Plate illo={plateIllo} caption={plateCaption} arch />
           </Reveal>
         ) : null}
       </div>

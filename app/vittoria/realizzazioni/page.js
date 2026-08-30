@@ -27,7 +27,7 @@ export default function RealizzazioniPage() {
                 delay={(index % 3) * 90}
               >
                 <div className="vr-work__frame">
-                  <Plate variant={work.variant} frame={false} />
+                  <Plate illo={work.illo} frame={false} />
                 </div>
                 <div className="vr-work__meta">
                   <span>{work.place}</span>
